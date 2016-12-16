@@ -26,24 +26,24 @@ def get_distance(bar):
     return distance
 
 
-def get_biggest_bar(data):
-    biggest_bar = max(data, key=get_seats_count)
+def get_biggest_bar(bars):
+    biggest_bar = max(bars, key=get_seats_count)
     return biggest_bar['Cells']['Name']
 
 
-def get_smallest_bar(data):
-    smallest_bar = min(data, key=get_seats_count)
+def get_smallest_bar(bars):
+    smallest_bar = min(bars, key=get_seats_count)
     return smallest_bar['Cells']['Name']
 
 
-def get_closest_bar(data):
-    closest_bar = min(data, key=get_distance)
+def get_closest_bar(bars):
+    closest_bar = min(bars, key=get_distance)
     return closest_bar['Cells']['Name']
 
 
 
 if __name__ == '__main__':
-    data = load_data('put_a_path')
-    print('The biggest bar:', get_biggest_bar(data))
-    print('The smallest bar:', get_smallest_bar(data))
-    print('The closest bar:', get_closest_bar(data))
+    bars = load_data('put_a_path')
+    print('The biggest bar:', get_biggest_bar(bars))
+    print('The smallest bar:', get_smallest_bar(bars))
+    print('The closest bar:', get_closest_bar(bars))
